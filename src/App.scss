@@ -1,0 +1,8 @@
+.appContainer {
+  background-color: rgb(232, 181, 181);
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  .navBar {
+    background-color: blue;
+  }
+}
