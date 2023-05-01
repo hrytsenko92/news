@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function Recipe() {
+export const Recipe: FC = () => {
   return (
     <div>Recipe</div>
   )
 }
-
-export default Recipe

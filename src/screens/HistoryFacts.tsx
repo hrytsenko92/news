@@ -1,9 +1,6 @@
-import React from 'react'
+import React, { FC, useEffect } from "react";
 
-function HistoryFacts() {
-  return (
-    <div>HistoryFacts</div>
-  )
+export const HistoryFacts: FC = () => {
+  return <div>HistoryFacts</div>;
 }
 
-export default HistoryFacts

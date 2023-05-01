@@ -17,3 +17,15 @@ body {
   min-height: 100vh;
 }
 
+.appContainer {
+  background-color: rgb(232, 181, 181);
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 1fr;
+  .navigation {
+    border: 1px solid red;
+  }
+  .outlet {
+    border: 1px solid green;
+  }
+}

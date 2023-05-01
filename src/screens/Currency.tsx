@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function Currency() {
+export const Currency: FC = () => {
   return (
     <div>Currency</div>
   )
 }
-
-export default Currency

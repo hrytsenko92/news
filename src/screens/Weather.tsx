@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { FC, useEffect } from 'react'
 
-function Weather() {
+export const Weather: FC = () => {
+
+useEffect(() => {
+  navigator.geolocation.getCurrentPosition(position => {
+    const { latitude, longitude } = position.coords;
+  console.log(`lat: ${latitude} and lon: ${longitude}`) // delete
+  });
+}, []);
+
   return (
     <div>Weather</div>
   )
 }
-
-export default Weather
