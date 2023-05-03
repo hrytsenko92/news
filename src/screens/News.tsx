@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { NewsType } from '../types/newsType';
-import { apiLoader } from '../api/api';
+import { apiLoader } from '../api/apiLoader';
 import { defer, useLoaderData, Await } from "react-router-dom";
 
 export const dataLoader = async () => {
@@ -8,7 +8,7 @@ export const dataLoader = async () => {
   const data: NewsType = await apiLoader(request);
   return defer({ data });
 };
-
+// use suspence and awaite
 export const News: FC = () => {
   const data = useLoaderData()
   // console.log(data.data.articles)
