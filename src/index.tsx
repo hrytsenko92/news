@@ -5,7 +5,7 @@ import { App } from "./App.tsx";
 import { ErrorPage } from "./screens/ErrorPage.tsx";
 import { News, dataLoader} from "./screens/News.tsx";
 import { Weather } from "./screens/Weather.tsx";
-import { Currency } from "./screens/Currency.tsx";
+import { Exchange } from "./screens/Exchange.tsx";
 import { Recipe } from "./screens/Recipe.tsx";
 import { HistoryFacts } from "./screens/HistoryFacts.tsx";
 
@@ -26,8 +26,8 @@ const router = createBrowserRouter([
         element: <Weather />,
       },
       {
-        path: "currency",
-        element: <Currency />,
+        path: "exchange",
+        element: <Exchange />,
       },
       {
         path: "recipe",

@@ -7,7 +7,7 @@ function NavBar() {
     <nav className={style.navBarContainer}>
         <Link to={'/news'}>News</Link>
         <Link to={'/weather'}>Weather</Link>
-        <Link to={'/currency'}>Currency</Link>
+        <Link to={'/exchange'}>Exchange</Link>
         <Link to={'/recipe'}>Recipe</Link>
         <Link to={'/historyFacts'}>History Facts</Link>
     </nav>

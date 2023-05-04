@@ -1,3 +1,11 @@
+export interface Position {
+  coords: {
+    latitude: number;
+    longitude: number;
+  };
+  timestamp: number;
+}
+
 export const getLocation = async (timeout = 5000): Promise<{ latitude: number; longitude: number } | null> => {
   if ("geolocation" in navigator) {
     try {
@@ -5,7 +13,6 @@ export const getLocation = async (timeout = 5000): Promise<{ latitude: number; l
         navigator.geolocation.getCurrentPosition(resolve, reject, { timeout });
       });
       const { latitude, longitude } = position.coords;
-      // console.log(`lat: ${latitude}/ lon: ${longitude}`)
       return { latitude, longitude };
     } catch (error) {
       console.error("getLocation error:", error);
