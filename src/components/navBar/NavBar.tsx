@@ -9,7 +9,6 @@ function NavBar() {
         <Link to={'/weather'}>Weather</Link>
         <Link to={'/exchange'}>Exchange</Link>
         <Link to={'/recipe'}>Recipe</Link>
-        <Link to={'/historyFacts'}>History Facts</Link>
     </nav>
   )
 }

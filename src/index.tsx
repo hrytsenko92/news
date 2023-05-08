@@ -6,8 +6,7 @@ import { ErrorPage } from "./screens/ErrorPage.tsx";
 import { News, dataLoader} from "./screens/News.tsx";
 import { Weather } from "./screens/Weather.tsx";
 import { Exchange } from "./screens/Exchange.tsx";
-import { Recipe } from "./screens/Recipe.tsx";
-import { HistoryFacts } from "./screens/HistoryFacts.tsx";
+import { Recipe, recipeDataLoader } from "./screens/Recipe.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,10 +31,7 @@ const router = createBrowserRouter([
       {
         path: "recipe",
         element: <Recipe />,
-      },
-      {
-        path: "historyFacts",
-        element: <HistoryFacts />,
+        loader: recipeDataLoader,
       },
     ],
   },
