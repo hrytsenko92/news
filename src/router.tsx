@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "./App.tsx";
 import { ErrorPage } from "./screens/ErrorPage.tsx";
-import { News, newsDataLoader} from "./screens/News.tsx";
+import { News, newsDataLoader} from "./screens/news/News.tsx";
 import { Weather } from "./screens/Weather.tsx";
 import { Exchange } from "./screens/Exchange.tsx";
 import { Recipe, recipeDataLoader } from "./screens/Recipe.tsx";
