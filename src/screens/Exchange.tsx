@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { ExchangeRateType } from "../types/ExchangeRateType";
-import { apiLoader } from "../api/apiLoader";
+import { apiLoader } from "../loaders/apiLoader";
 import { Select } from "../components/exchange/Select";
 
 export const Exchange: FC = () => {

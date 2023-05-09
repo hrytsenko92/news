@@ -1,18 +1,28 @@
-import { FC } from 'react'
-import { NewsType } from '../types/newsType';
-import { apiLoader } from '../api/apiLoader';
+import { FC, Suspense, useState } from 'react'
+import { NewsType, Article } from '../types/newsType';
+import { apiLoader } from '../loaders/apiLoader';
 import { defer, useLoaderData, Await } from "react-router-dom";
+import { NewsCard } from '../components/news/NewsCard';
 
-export const dataLoader = async () => {
+export const newsDataLoader = async () => {
   const request = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=782a7379df92415ebe4dc42d9983fc99'
   const data: NewsType = await apiLoader(request);
   return defer({ data });
 };
-// use suspence and awaite
+
 export const News: FC = () => {
-  const data = useLoaderData()
-  // console.log(data.data.articles)
+    const { data } = useLoaderData();
+  const [isOpen, setIsOpen] = useState<number>(-1);
+  const handleIsOpen = (id: number) => {
+    setIsOpen(id)
+  }
   return (
-    <div>News</div>
-  )
+    <Suspense fallback={<p>suspense loading...</p>}>
+      <Await
+        resolve={data}
+        errorElement={<p>error...</p>}
+        children={(data) => (data.articles.map((item: Article, index: number ) => (<NewsCard data={item} isOpen={isOpen} handleIsOpen={handleIsOpen} index={index} key={index}  />)))}
+      />
+    </Suspense>
+  );
 }

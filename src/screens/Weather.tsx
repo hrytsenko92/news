@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, Suspense, useState } from "react";
 import { TodayWeather } from "../components/weather/todayWeather";
-import { getLocation } from "../api/getLocation";
-import { apiLoader } from "../api/apiLoader";
+import { getLocation } from "../loaders/getLocation";
+import { apiLoader } from "../loaders/apiLoader";
 import { OneDayWeatherType } from "../types/oneDayWeatherType";
 import { FiveDayWeatherType } from "../types/fiveDayWeatherType";
 

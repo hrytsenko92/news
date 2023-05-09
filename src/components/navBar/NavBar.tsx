@@ -4,12 +4,12 @@ import style from './navBar.module.scss'
 
 function NavBar() {
   return (
-    <nav className={style.navBarContainer}>
+    <div className={style.navBarContainer}>
         <Link to={'/news'}>News</Link>
         <Link to={'/weather'}>Weather</Link>
         <Link to={'/exchange'}>Exchange</Link>
         <Link to={'/recipe'}>Recipe</Link>
-    </nav>
+    </div>
   )
 }
 
