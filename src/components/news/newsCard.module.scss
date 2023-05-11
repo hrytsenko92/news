@@ -9,12 +9,24 @@
     overflow: hidden;
 }
 .closeBTN {
-    width: 50px;
-    height: 25px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 0;
     position: absolute;
     right: 10px;
     top: 10px;
     z-index: 5;
+}
+.closeSVG {
+    width: 25px;
+    height: 25px;
 }
 .title {
     font-weight: 600;
@@ -37,6 +49,13 @@
     cursor: pointer;
     display: none;
     text-decoration: none;
+    &:link {
+        color: black;
+    }
+}
+.rightSVG {
+    width: 20px;
+    height: auto;
 }
 .img {
     width: 100%;
@@ -141,7 +160,10 @@
                 display: inline-block;
             }
             .readMore {
-                display: inline-block;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
             }
         }
        
@@ -184,7 +206,10 @@
                 display: inline-block;
             }
             .readMore {
-                display: inline-block;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
             }
         }
         .img {
