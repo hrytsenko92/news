@@ -15,7 +15,6 @@ type PropsData = {
 };
 
 export const NewsCard = ({ data, isOpen, index, handleIsOpen }: PropsData) => {
-  console.log(data);
   const daysFormated = (i: Date) => {
     return dayjs(i).format("DD MMMM HH:MM");
   };
