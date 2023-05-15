@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "./App.tsx";
-import { ErrorPage } from "./screens/ErrorPage.tsx";
+import { ErrorPage } from "./screens/errorPage/ErrorPage.tsx";
 import { News, newsDataLoader} from "./screens/news/News.tsx";
 import { Weather } from "./screens/weather/Weather.tsx";
-import { Exchange } from "./screens/Exchange.tsx";
-import { Recipe, recipeDataLoader } from "./screens/Recipe.tsx";
+import { Exchange } from "./screens/exchange/Exchange.tsx";
+import { Recipe } from "./screens/recipe/Recipe.tsx";
+import { RecipeCard, singleRecipeLoader } from "./components/recipe/recipeCard/RecipeCard.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ export const router = createBrowserRouter([
       {
         path: "recipe",
         element: <Recipe />,
-        loader: recipeDataLoader,
+      },
+      {
+        path: "recipe/:id",
+        element: <RecipeCard />,
+        loader: singleRecipeLoader,
       },
     ],
   },

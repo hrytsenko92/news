@@ -15,6 +15,7 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
   const timeFormated = (i: Date) => {
     return dayjs(i).format("HH:MM");
   };
+  console.log(oneDayData)
   return (
     <section className={style.container}>
       <div className={style.top}>

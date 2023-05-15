@@ -26,6 +26,7 @@ export const FormWeather = ({
           </button> : null}
           <input
             className={style.formInput}
+            required
             type="text"
             placeholder="Enter city name..."
             value={cityName}
