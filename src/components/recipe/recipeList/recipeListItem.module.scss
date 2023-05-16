@@ -1,0 +1,28 @@
+.container {
+    border: 1px solid red;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    .imgWrapper {
+        .img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .recipeTitle {
+        font-size: 20px;
+    }
+    .link {
+        border: 1px solid blue;
+        border-radius: 5px;
+        width: 75px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}

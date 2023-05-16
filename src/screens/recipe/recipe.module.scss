@@ -1,0 +1,30 @@
+.container {
+    .list {
+        display: grid;
+        gap: 25px;
+    }
+}
+@media (min-width: 375px) {
+    .container {
+        .list {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+    }
+}
+@media (min-width: 600px) {
+    .container {
+        .list {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        .list {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+    }
+}

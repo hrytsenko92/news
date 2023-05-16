@@ -12,7 +12,7 @@ export const newsDataLoader = async () => {
 };
 
 export const News: FC = () => {
-    const { data } = useLoaderData();
+  const { data } = useLoaderData();
   const [isOpen, setIsOpen] = useState<number>(-1);
   const handleIsOpen = (id: number) => {
     setIsOpen(id)
