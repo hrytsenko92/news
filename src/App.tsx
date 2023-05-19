@@ -3,6 +3,7 @@ import style from "./app.module.scss";
 import { useState } from "react";
 import closeSVG from "./assets/close.svg";
 import burgerSVG from "./assets/burger.svg";
+// import logoSVG from './assets/logo.svg';
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -10,30 +11,52 @@ export const App = () => {
     <div
       className={isOpen ? style.appContainerIsOpen : style.appContainerIsClosed}
     >
-      <button className={style.isOpen} onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? (
-          <img className={style.closeSVG} src={closeSVG} />
-        ) : (
-          <img className={style.burgerSVG} src={burgerSVG} />
-        )}
-      </button>
+      <header className={style.header}>
+        <button className={style.isOpenBTN} onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <img className={style.closeSVG} src={closeSVG} />
+          ) : (
+            <img className={style.burgerSVG} src={burgerSVG} />
+          )}
+        </button>
+        <span className={style.logo}>insider</span>
+      </header>
       <nav className={style.navigation}>
-        <Link onClick={() => setIsOpen(false)} to={"/news"}>
+        <Link
+          className={style.link}
+          onClick={() => setIsOpen(false)}
+          to={"/news"}
+        >
           News
         </Link>
-        <Link onClick={() => setIsOpen(false)} to={"/weather"}>
+        <Link
+          className={style.link}
+          onClick={() => setIsOpen(false)}
+          to={"/weather"}
+        >
           Weather
         </Link>
-        <Link onClick={() => setIsOpen(false)} to={"/exchange"}>
+        <Link
+          className={style.link}
+          onClick={() => setIsOpen(false)}
+          to={"/exchange"}
+        >
           Exchange
         </Link>
-        <Link onClick={() => setIsOpen(false)} to={"/recipe"}>
+        <Link
+          className={style.link}
+          onClick={() => setIsOpen(false)}
+          to={"/recipe"}
+        >
           Recipe
         </Link>
       </nav>
-      <main className={style.outlet}>
+      <main className={style.main}>
         <Outlet />
       </main>
+      <footer className={style.footer}>
+        <span>some info</span>
+      </footer>
     </div>
   );
 };

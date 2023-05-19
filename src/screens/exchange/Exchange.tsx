@@ -31,7 +31,6 @@ export const Exchange: FC = () => {
     };
     getData();
   }, []);
-console.log(data)
   return (
     <div className="container">
       {data !== undefined ? (
