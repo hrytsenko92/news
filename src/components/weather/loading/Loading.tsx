@@ -1,7 +1,8 @@
 import React from 'react'
+import style from './loading.module.scss';
 
 export const Loading = () => {
   return (
-    <div></div>
+    <div>Loading data...</div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import style from "./formWeather.module.scss";
-import closeSVG from '../../../assets/close.svg';
+import closeSVG from '../../../assets/closeRed.svg';
 import locationSVG from '../../../assets/location.svg';
 
 type FormProps = {
@@ -26,7 +26,6 @@ export const FormWeather = ({
           </button> : null}
           <input
             className={style.formInput}
-            required
             type="text"
             placeholder="Enter city name..."
             value={cityName}
