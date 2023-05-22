@@ -3,7 +3,6 @@ import style from "./app.module.scss";
 import { useState } from "react";
 import closeSVG from "./assets/close.svg";
 import burgerSVG from "./assets/burger.svg";
-// import logoSVG from './assets/logo.svg';
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

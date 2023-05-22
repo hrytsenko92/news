@@ -1,224 +1,194 @@
 .newCardContainer {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    // box-shadow: 0px 20px 10px rgba(0,0,0,0.1);
-    // // border-radius: 10px;
-    border-bottom: 1px solid #cecece;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: white;
 }
 .closeBTN {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    background-color: gainsboro;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;
-    padding: 0;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 5;
-}
-.closeSVG {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-bottom-left-radius: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 5;
+  .closeSVG {
     width: 25px;
     height: 25px;
+  }
 }
+
 .title {
-    font-weight: 600;
-    display: inline-block;
+  font-weight: 600;
+  display: inline-block;
 }
 .description {
-    margin: 0;
-    display: none;
+  margin: 0;
+  display: none;
 }
 .author {
-    display: none;
+  display: none;
 }
 .infoWrapper {
-    display: none;
+  display: none;
 }
 .date {
-    display: none;
+  display: none;
 }
 .readMore {
-    cursor: pointer;
-    display: none;
-    text-decoration: none;
-    &:link {
-        color: black;
-    }
-}
-.rightSVG {
-    width: 20px;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+  &:link,
+  &:focus,
+  &:visited,
+  &:hover {
+    color: black;
+  }
+  .rightSVG {
+    width: 23px;
     height: auto;
+  }
 }
+
 .img {
-    width: 100%;
-    // max-width: 350px;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: none;
 }
 
 .closeContainer {
-    padding: 10px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  height: 75px;
+  padding: 15px 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: self-start;
 }
 
-
-// .openContainer {
-//     height: auto;
-//     border-radius: 10px;
-//     overflow: hidden;
-//     border: 1px solid red;
-//     display: grid;
-//     grid-template-columns: 1.5fr 1fr;
-//     grid-template-rows: auto;
-//     gap: 10px;
-//     .title {
-//         grid-column: 1/2;
-//         grid-row: 1/2;
-//         margin: 25px 0px 0px 10px;
-//     }
-//     .description {
-//         display: block;
-//         grid-column: 1/2;
-//         grid-row: 2/3;
-//         margin-left: 10px;
-//     }
-//     .infoWrapper {
-//         grid-column: 1/2;
-//         grid-row: 3/4;
-//         margin: 0px 0px 10px 10px;
-//         display: flex;
-//         flex-flow: row nowrap;
-//         justify-content: space-between;
-//         align-items: center;
-//         .date {
-//             display: inline-block;
-//         }
-//         .readMore {
-//             display: inline-block;
-//         }
-//     }
-//     .img {
-//         display: block;
-//         grid-column: 2/3;
-//         grid-row: 1/4;
-//     }
-
-// }
-
 @media (min-width: 375px) {
-    .openContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 10px;
-        .img {
-            display: block;
-            grid-column: 1/2;
-            grid-row: 1/2;
-        }
-        .title {
-            grid-column: 1/2;
-            grid-row: 2/3;
-            margin: 0px 10px;
-            text-align: justify;
-        }
-        .description {
-            display: block;
-            grid-column: 1/2;
-            grid-row: 3/4;
-            margin: 0px 10px;
-            text-align: justify;
-        }
-        .author {
-            display: inline-block;
-            margin: 0px 10px;
-            grid-column: 1/2;
-            grid-row: 4/5; 
-        }
-        .infoWrapper {
-            grid-column: 1/2;
-            grid-row: 5/6;
-            margin: 0px 10px 10px;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: center;
-            .date {
-                display: inline-block;
-            }
-            .readMore {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-       
-    
+  .openContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    .img {
+      display: block;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .title {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      margin: 0px 20px;
+      text-align: justify;
+      font-size: 18px;
+    }
+    .description {
+      display: block;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin: 0px 20px;
+      text-align: justify;
+    }
+    .author {
+      display: inline-block;
+      margin: 0px 20px;
+      grid-column: 1/2;
+      grid-row: 4/5;
+      font-weight: 600;
+    }
+    .infoWrapper {
+      grid-column: 1/2;
+      grid-row: 5/6;
+      margin: 0px 20px 20px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .date {
+        display: inline-block;
+        font-weight: 500;
+      }
+      .readMore {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        text-decoration: underline;
+      }
     }
   }
+}
 
 @media (min-width: 768px) {
-    .openContainer {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        grid-template-rows: auto;
-        gap: 10px;
-        .title {
-            grid-column: 1/2;
-            grid-row: 1/2;
-            margin: 25px 0px 0px 10px;
-        }
-        .description {
-            display: block;
-            grid-column: 1/2;
-            grid-row: 2/3;
-            margin-left: 10px;
-        }
-        .author {
-            display: inline-block;
-            grid-column: 1/2;
-            grid-row: 3/4; 
-            margin-left: 10px;
-        }
-        .infoWrapper {
-            grid-column: 1/2;
-            grid-row: 4/5;
-            margin: 0px 0px 10px 10px;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: center;
-            .date {
-                display: inline-block;
-            }
-            .readMore {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-        .img {
-            display: block;
-            grid-column: 2/3;
-            grid-row: 1/5;
-        }
-    
+  .newCardContainer {
+    width: 80%;
+  }
+  .openContainer {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    .title {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin: 25px 0px 0px 10px;
+    }
+    .description {
+      display: block;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      margin-left: 10px;
+    }
+    .author {
+      display: inline-block;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin-left: 10px;
+    }
+    .infoWrapper {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      margin: 0px 0px 10px 10px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .date {
+        display: inline-block;
+      }
+      .readMore {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .img {
+      display: block;
+      grid-column: 2/3;
+      grid-row: 1/5;
     }
   }
-  
+}
+
+@media (min-width: 1024px) {
+  .newCardContainer {
+    width: 70%;
+  }
+}
