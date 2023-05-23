@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, useState } from "react";
-import { Loading } from "../../components/weather/loading/Loading";
+import { Loading } from "../../components/loading/Loading";
 import { TodayWeather } from "../../components/weather/todayWeather/TodayWeather";
 import { getLocation } from "../../loaders/getLocation";
 import { apiLoader } from "../../loaders/apiLoader";
@@ -45,7 +45,7 @@ export const Weather: FC = () => {
     setCity("");
   };
   return (
-      <div className={style.weatherContainer}>
+      <div className={style.container}>
         <FormWeather
           handleSubmit={handleSubmit}
           cityName={city}

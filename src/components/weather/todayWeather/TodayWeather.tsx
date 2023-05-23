@@ -28,9 +28,6 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
             className={style.skyIMG}
             src={`https://openweathermap.org/img/wn/${oneDayData.weather[0]["icon"]}@2x.png`}
           />
-          <span className={style.description}>
-            {oneDayData.weather[0].description}
-          </span>
         </div>
         <div className={style.midRight}>
           <span className={style.temp}>{`${oneDayData.main.temp}\xB0`}</span>
@@ -43,7 +40,7 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
         <div className={style.bottomLeft}>
           <span
             className={style.wind}
-          >{`wind speen ${oneDayData.wind.speed} m/s`}</span>
+          >{`Wind speen ${oneDayData.wind.speed} m/s`}</span>
           <span
             className={style.pressure}
           >{`Pressure ${oneDayData.main.pressure} hPa`}</span>

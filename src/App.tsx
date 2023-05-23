@@ -53,9 +53,6 @@ export const App = () => {
       <main className={style.main}>
         <Outlet />
       </main>
-      <footer className={style.footer}>
-        <span>some info</span>
-      </footer>
     </div>
   );
 };

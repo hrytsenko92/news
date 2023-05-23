@@ -2,6 +2,7 @@ body {
   margin: 0 auto;
   width: 100%;
   min-width: 375px;
+  height: 100vh;
 }
 .isOpenBTN {
   width: 30px;
@@ -24,7 +25,7 @@ body {
 .appContainerIsClosed {
   max-width: 1440px;
   width: 100%;
-  background-color: rgb(228, 228, 228);
+  background-color: #f9f9f9;
   margin: 0 auto;
   position: relative;
   display: grid;
@@ -56,7 +57,7 @@ body {
   }
 }
 .navigation {
-  background-color: rgb(228, 228, 228);
+  background-color: #f9f9f9;
   .link {
     text-decoration: none;
     font-size: 28px;
@@ -68,16 +69,10 @@ body {
     color: red;
   }
 }
-.footer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  background-color: royalblue; 
-}
+
 @media (min-width: 375px) {
   .appContainerIsOpen {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     grid-template-rows: 75px 1fr;
     .header {
       grid-column: 1/2;
@@ -95,13 +90,10 @@ body {
     .main {
       display: none;
     }
-    .footer {
-      display: none;
-    }
   }
   .appContainerIsClosed {
-    grid-template-columns: auto;
-    grid-template-rows: 75px 1fr 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 1fr;
     align-items: start;
     justify-content: center;
     .header {
@@ -117,16 +109,12 @@ body {
       display: block;
       padding: 25px;
     }
-    .footer {
-      grid-column: 1/2;
-      grid-row: 3/4;
-    }
   }
 }
 @media (min-width: 768px) {
   .appContainerIsOpen {
     grid-template-columns: auto 1fr;
-    grid-template-rows: 75px auto 50px;
+    grid-template-rows: 75px auto ;
     .header {
       grid-column: 1/3;
       grid-row: 1/2;
@@ -157,14 +145,10 @@ body {
       padding: 25px;
       overflow: scroll;
     }
-    .footer {
-      grid-column: 1/3;
-      grid-row: 4/5;      
-    }
   }
   .appContainerIsClosed {
     grid-template-columns: 1fr;
-    grid-template-rows: 75px calc(100% - 75px) 50px;
+    grid-template-rows: 75px calc(100% - 75px);
     .header {
       grid-column: 1/2;
       grid-row: 1/2;
@@ -183,10 +167,6 @@ body {
       display: block;
       padding: 25px;
       overflow: scroll;
-    }
-    .footer {
-      grid-column: 1/2;
-      grid-row: 3/4;
     }
   }
 }
