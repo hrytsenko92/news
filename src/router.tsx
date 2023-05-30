@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
       {
         path: "recipe",
         element: <Recipe />,
-        // loader: randomRecipeLoader,
+        loader: randomRecipeLoader,
       },
       {
         path: "recipe/:id",

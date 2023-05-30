@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import closeSVG from '../../../assets/close.svg';
+import closeSVG from '../../../assets/closeRed.svg';
 import style from './formRecipe.module.scss';
 
 type FormProps = {
@@ -25,7 +25,7 @@ export const RecipeForm = ({
           className={style.formInput}
           required
           type="text"
-          placeholder="Enter city name..."
+          placeholder="Enter recipe name..."
           value={recipeTitle}
           onChange={handleChange}
         />

@@ -1,19 +1,19 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, Suspense, useState } from "react";
 import { apiLoader } from "../../loaders/apiLoader";
 import { RecipeListItem } from "../../components/recipe/recipeList/RecipeListItem";
 import { RecipeForm } from "../../components/recipe/form/RecipeForm";
 import { RecipeListType, Result } from "../../types/recipeList";
-import style from './recipe.module.scss';
-// import { defer, useLoaderData } from "react-router-dom";
+import style from "./recipe.module.scss";
+import { Await, defer, useLoaderData } from "react-router-dom";
 
-// export const randomRecipeLoader = async () => {
-//   const request = `https://api.spoonacular.com/recipes/random?apiKey=1e23ac7b985f4eef8bddaa18559163d9&number=20`
-//   const randomRecipeData = await apiLoader(request);
-//   return defer({ randomRecipeData });
-// };
+export const randomRecipeLoader = async () => {
+  const request = `https://api.spoonacular.com/recipes/random?apiKey=1e23ac7b985f4eef8bddaa18559163d9&number=20`;
+  const randomRecipeData: RecipeListType = await apiLoader(request);
+  return defer({ randomRecipeData });
+};
 
 export const Recipe: FC = () => {
-  // const { randomRecipeData } = useLoaderData();
+  const { randomRecipeData } = useLoaderData();
   const [recipeTitle, setRecipeTitle] = useState<string>("");
   const [recipeData, setRecipeData] = useState<RecipeListType>();
 
@@ -37,7 +37,7 @@ export const Recipe: FC = () => {
   const clearInput = () => {
     setRecipeTitle("");
   };
-// console.log(randomRecipeData)
+  console.log(randomRecipeData);
   return (
     <div className={style.container}>
       <RecipeForm
@@ -47,9 +47,23 @@ export const Recipe: FC = () => {
         handleChange={handleChange}
       />
       <div className={style.list}>
-        {recipeData !== undefined
-          ? recipeData.results.map((item: Result) => <RecipeListItem data={item} key={item.id}/>)
-          : null}
+        {recipeData !== undefined ? (
+          recipeData.results.map((item: Result) => (
+            <RecipeListItem data={item} key={item.id} />
+          ))
+        ) : (
+          <Suspense fallback={<p>suspense loading...</p>}>
+            <Await
+              resolve={randomRecipeData}
+              errorElement={<p>error...</p>}
+              children={(data) =>
+                data.recipes.map((item: Result) => (
+                  <RecipeListItem data={item} key={item.id} />
+                ))
+              }
+            />
+          </Suspense>
+        )}
       </div>
     </div>
   );
