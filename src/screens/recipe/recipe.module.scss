@@ -1,4 +1,15 @@
 .container {
+    .formWrapper {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        .title {
+            font-size: 25px;
+            text-align: center;
+            padding: 0; 
+            margin: 0;
+        }
+    }
     .list {
         display: grid;
         gap: 25px;
@@ -6,6 +17,10 @@
 }
 @media (min-width: 375px) {
     .container {
+        .formWrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
         .list {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
@@ -22,6 +37,10 @@
 }
 @media (min-width: 768px) {
     .container {
+        .formWrapper {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
         .list {
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto;

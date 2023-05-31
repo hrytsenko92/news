@@ -37,15 +37,18 @@ export const Recipe: FC = () => {
   const clearInput = () => {
     setRecipeTitle("");
   };
-  console.log(randomRecipeData);
+
   return (
     <div className={style.container}>
-      <RecipeForm
+      <div className={style.formWrapper}>
+        <p className={style.title}>Find your favorite recipe...</p>
+        <RecipeForm
         handleSubmit={handleSubmit}
         recipeTitle={recipeTitle}
         clearInput={clearInput}
         handleChange={handleChange}
       />
+      </div>
       <div className={style.list}>
         {recipeData !== undefined ? (
           recipeData.results.map((item: Result) => (
