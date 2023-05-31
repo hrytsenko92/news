@@ -1,6 +1,32 @@
 .newsContainer {
+  .titleWrapper {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
+    .title {
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+  }
+  .listWrapper {
+    display: grid;
+    justify-content: center;
+    align-items: start;
     gap: 15px;
+  }
+}
+
+@media (min-width: 375px) {
+    .listWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+}
+
+@media (min-width: 575px) {
+    .listWrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
 }
