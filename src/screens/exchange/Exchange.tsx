@@ -47,32 +47,36 @@ export const Exchange: FC = () => {
     <section className={style.container}>
       {data !== undefined ? (
         <div className={style.positionWrapper}>
-          <div className={style.selectIn}>
-            <Select data={data} onCurrencyChange={onCurrencyInChange} />
-          </div>
-          <div className={style.inputWrap}>
-          {selectedOutCurrency !== null ? (
-              <div className={style.result}>{`${(inputCurrency * selectedOutCurrency).toFixed(
-                2
-              )}`}</div>
-            ) : (
-             null
-            )}
+          <div className={style.selectInWrapper}>
             <input
-            className={style.input}
+              className={style.input}
               type="text"
               value={inputCurrency}
               onChange={handleInputChange}
             />
+            <div className={style.selectIn}>
+              <Select data={data} onCurrencyChange={onCurrencyInChange} />
+            </div>
           </div>
-          <div className={style.selectOut}>
-            <Select data={data} onCurrencyChange={onCurrencyOutChange} />
+          <div className={style.selectOutWrapper}>
+            {selectedOutCurrency !== null ? (
+              <div className={style.result}>{`${(
+                inputCurrency * selectedOutCurrency
+              ).toFixed(2)}`}</div>
+            ) : null}
+            <div className={style.selectOut}>
+              <Select data={data} onCurrencyChange={onCurrencyOutChange} />
+            </div>
           </div>
         </div>
       ) : (
         <Loading />
       )}
-      {data !== undefined ? <div className={style.info}>{`*Last data updated at ${data.time_last_update_utc}`}</div> : null}
+      {data !== undefined ? (
+        <div
+          className={style.info}
+        >{`*Last data updated at ${data.time_last_update_utc}`}</div>
+      ) : null}
     </section>
   );
 };
