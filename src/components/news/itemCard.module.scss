@@ -1,28 +1,33 @@
 .itemCardContainer {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top: 20px;
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-  .img {
-    width: 100%;
-    // height: auto;
-    object-fit: cover;
-    aspect-ratio: 1.5/1;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  .contentWrapper {
+    .img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1.5/1;
+    }
+    .title {
+      font-family: "Fraunces", serif;
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-top: 10px;
+    }
+    .description {
+      font-size: 18px;
+      padding: 0px;
+      margin: 0px;
+      margin-top: 10px;
+    }
   }
-  .title {
-    font-family: "Fraunces", serif;
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 1.25;
-    margin-top: 15px;
-  }
-  .description {
-    font-size: 18px;
-  }
+
   .infoWrapper {
     display: flex;
     flex-flow: row nowrap;
@@ -30,28 +35,35 @@
     align-items: center;
     gap: 15px;
     .authorDate {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
       .author {
-        border-right: 1px solid red;
+        border-right: 1px solid #263159;
         padding-right: 5px;
         margin-right: 5px;
+        text-decoration: underline;
       }
-      .date {}
+      .date {
+        font-weight: 500;
+      }
     }
     .readMore {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 16px;
       text-decoration: none;
       white-space: nowrap;
       color: #e8aa42;
+      background-color: #263159;
       .rightSVG {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
       }
     }
   }

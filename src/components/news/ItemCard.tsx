@@ -16,18 +16,19 @@ export const ItemCard = ({ data }: PropsData) => {
 
   return (
     <div className={style.itemCardContainer}>
-      {data.urlToImage ? (
-        <img className={style.img} src={data.urlToImage} />
-      ) : (
-        <img className={style.img} src={notFound} />
-      )}
-      <span className={style.title}>{data.title}</span>
-      {data.content !== null ? (
-        <p className={style.description}>
-          {data.content.replace(/\[\+\d+ chars\]/g, "")}
-        </p>
-      ) : null}
-
+      <div className={style.contentWrapper}>
+        {data.urlToImage ? (
+          <img className={style.img} src={data.urlToImage} />
+        ) : (
+          <img className={style.img} src={notFound} />
+        )}
+        <span className={style.title}>{data.title}</span>
+        {data.content !== null ? (
+          <p className={style.description}>
+            {data.content.replace(/\[\+\d+ chars\]/g, "")}
+          </p>
+        ) : null}
+      </div>
       <div className={style.infoWrapper}>
         <div className={style.authorDate}>
           {data.author && data.author.length < 15 ? (
