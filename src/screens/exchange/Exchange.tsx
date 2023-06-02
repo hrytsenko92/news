@@ -45,6 +45,7 @@ export const Exchange: FC = () => {
   }, []);
   return (
     <section className={style.container}>
+      <h1 className={style.title}>Currency converter</h1>
       {data !== undefined ? (
         <div className={style.positionWrapper}>
           <div className={style.selectInWrapper}>
@@ -63,7 +64,7 @@ export const Exchange: FC = () => {
               <div className={style.result}>{`${(
                 inputCurrency * selectedOutCurrency
               ).toFixed(2)}`}</div>
-            ) : null}
+            ) : <span className={style.defaultText}>Select currency</span>}
             <div className={style.selectOut}>
               <Select data={data} onCurrencyChange={onCurrencyOutChange} />
             </div>

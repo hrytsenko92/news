@@ -15,7 +15,6 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
   const timeFormated = (i: Date) => {
     return dayjs(i).format("HH:MM");
   };
-  console.log(oneDayData)
   return (
     <section className={style.container}>
       <div className={style.top}>
@@ -30,10 +29,10 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
           />
         </div>
         <div className={style.midRight}>
-          <span className={style.temp}>{`${oneDayData.main.temp}\xB0`}</span>
+          <span className={style.temp}>{`${oneDayData.main.temp.toFixed(1)}\xB0`}</span>
           <span
             className={style.feelsLike}
-          >{`Feels like ${oneDayData.main.feels_like}\xB0`}</span>
+          >{`Feels like ${oneDayData.main.feels_like.toFixed(1)}\xB0`}</span>
         </div>
       </div>
       <div className={style.bottom}>

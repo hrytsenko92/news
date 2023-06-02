@@ -7,10 +7,19 @@
   align-items: center;
   gap: 25px;
 }
+.title {
+  font-family: "Fraunces", serif;
+  font-size: 25px;
+  margin: 0px;
+}
 .positionWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 20px 0px;
+  margin: 20px 0px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   .selectInWrapper,
   .selectOutWrapper {
     display: grid;
@@ -31,11 +40,15 @@
   }
   .selectOutWrapper {
     .result {
-        margin: 0 auto;
+      margin: 0 auto;
+      color: red;
+    }
+    .defaultText {
+      text-align: center;
     }
     .selectOut {
-        grid-column: 1/2;
-        grid-row: 2/3;
+      grid-column: 1/2;
+      grid-row: 2/3;
     }
   }
 }
