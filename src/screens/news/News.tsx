@@ -5,7 +5,8 @@ import { defer, useLoaderData, Await } from "react-router-dom";
 import { ItemCard } from "../../components/news/ItemCard";
 import style from "./news.module.scss";
 
-export const newsDataLoader = async ({req = "https://newsapi.org/v2/top-headlines?country=us&page=1&apiKey=782a7379df92415ebe4dc42d9983fc99"}) => {// pagination?, api page size error
+export const newsDataLoader = async () => {
+  const req = "https://newsapi.org/v2/top-headlines?country=us&page=1&apiKey=782a7379df92415ebe4dc42d9983fc99"
   const data: NewsType = await apiLoader(req);
   return defer({ data });
 };

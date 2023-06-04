@@ -1,28 +1,41 @@
+@import '../../../assets/colors.scss';
 .container {
-    border: 1px solid red;
-    margin: 0 auto;
-    padding: 5px;
-    border-radius: 5px;
-    max-width: 300px;
+//   padding: 0px 0px 20px;
+  margin: 0px 0px 20px;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: white;
+  .imgWrapper {
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .recipeTitle {
+    color: var(--midnightBlue);
+    font-size: 22px;
+    font-family: "Fraunces", serif;
+    margin: 0px 10px;
+    text-align: center;
+  }
+  .link {
+    width: 150px;
+    height: 25px;
+    margin: 10px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    color: var(--midnightBlue);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
-    .imgWrapper {
-        .img {
-            width: 100%;
-            height: auto;
-        }
-    }
-    .recipeTitle {
-        font-size: 20px;
-    }
-    .link {
-        border: 1px solid blue;
-        border-radius: 5px;
-        width: 75px;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-    }
+  }
+  .link:hover {
+    background-color: var(--gold);
+  }
 }

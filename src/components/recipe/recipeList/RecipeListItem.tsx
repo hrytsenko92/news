@@ -13,7 +13,7 @@ export const RecipeListItem = ({ data }: PropsData) => {
       </div>
       <span className={style.recipeTitle}>{data.title}</span>
       <Link className={style.link} to={`${data.id}`}>
-        go
+        Open
       </Link>
 
     </section>
