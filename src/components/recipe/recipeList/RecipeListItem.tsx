@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import style from "./recipeListItem.module.scss";
 import { Result } from "../../../types/recipeList";
 
@@ -15,7 +15,6 @@ export const RecipeListItem = ({ data }: PropsData) => {
       <Link className={style.link} to={`${data.id}`}>
         Open
       </Link>
-
     </section>
   );
 };

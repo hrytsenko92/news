@@ -20,11 +20,6 @@ export const RecipeCard = () => {
       </div>
       <div className={style.infoWrapper}>
         <span className={style.title}>{data.title}</span>
-        <div className={style.dishTypesWrapper}>
-          {data.dishTypes.map((item, index) => (
-            <span key={index}>{item}</span>
-          ))}
-        </div>
         <div className={style.timeType}>
           <span
             className={style.time}
@@ -44,15 +39,20 @@ export const RecipeCard = () => {
             )}
           </span>
         </div>
+        <div className={style.dishTypesWrapper}>
+          {data.dishTypes.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
+        </div>
         <div className={style.summary}>
           {data.summary.replace(/<[^>]+>/g, "")}
         </div>
       </div>
       <div className={style.stepsWrapper}>
         {data.analyzedInstructions[0].steps.map((item, index) => (
-          <p className={style.stepItem} key={index}>
-            {item.step}
-          </p>
+          <span className={style.stepItem} key={index}>
+            {`- ${item.step}`}
+          </span>
         ))}
       </div>
     </section>

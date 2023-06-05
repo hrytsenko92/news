@@ -14,7 +14,9 @@ export const Exchange: FC = () => {
 
   const getNewData = async (code: string) => {
     const res: ExchangeRateType = await apiLoader(
-      `https://v6.exchangerate-api.com/v6/600640d62d3baeea55a4dccd/latest/${code}`
+      `https://v6.exchangerate-api.com/v6/${
+        import.meta.env.VITE_EXCHANGE_API_KEY
+      }/latest/${code}`
     );
     setData(res);
   };
@@ -64,7 +66,9 @@ export const Exchange: FC = () => {
               <div className={style.result}>{`${(
                 inputCurrency * selectedOutCurrency
               ).toFixed(2)}`}</div>
-            ) : <span className={style.defaultText}>Select currency</span>}
+            ) : (
+              <span className={style.defaultText}>Select currency</span>
+            )}
             <div className={style.selectOut}>
               <Select data={data} onCurrencyChange={onCurrencyOutChange} />
             </div>

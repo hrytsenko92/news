@@ -1,8 +1,10 @@
-import React from 'react'
-import style from './loading.module.scss';
+import style from "./loading.module.scss";
 
 export const Loading = () => {
   return (
-    <div>Loading data...</div>
-  )
-}
+    <div className={style.container}>
+      <span className={style.title}>Loading data...</span>
+      <span className={style.description}>Please wait</span>
+    </div>
+  );
+};

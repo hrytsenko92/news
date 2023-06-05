@@ -1,4 +1,4 @@
-@import '../../../assets/colors.scss';
+@import "../../../assets/colors.scss";
 
 .formWrapper {
   position: relative;
@@ -41,12 +41,10 @@
     border: none;
     padding: 0;
     margin: 0;
-
     .closeSVG {
       width: 15px;
       height: 15px;
     }
-
   }
   .formSubmit {
     grid-column: 1/2;

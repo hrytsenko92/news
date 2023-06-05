@@ -6,10 +6,10 @@
     align-items: center;
     .title {
       font-family: "Fraunces", serif;
-        text-decoration: underline;
-        text-transform: uppercase;
-        font-size: 35px;
-        margin: 0px;
+      text-decoration: underline;
+      text-transform: uppercase;
+      font-size: 35px;
+      margin: 0px;
     }
   }
   .listWrapper {
@@ -22,17 +22,17 @@
 }
 
 @media (min-width: 375px) {
-    .listWrapper {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto-fill, 1fr);
-    }
+  .listWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+  }
 }
 
 @media (min-width: 575px) {
-    .listWrapper {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(auto-fill, 1fr);
-    }
+  .listWrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+  }
 }
 
 @media (min-width: 840px) {

@@ -16,10 +16,16 @@ export const Weather: FC = () => {
     event.preventDefault();
     if (city.match(/^[a-zA-Z]{4,}$/)) {
       const cityCords = await apiLoader(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&units=metric&appid=6ae6c79ccba3cdde251bf0965d4d137a`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&units=metric&appid=${
+          import.meta.env.VITE_WEATHER_API_KEY
+        }`
       );
       const oneDayWeather = await apiLoader(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${cityCords[0].lat}&lon=${cityCords[0].lon}&units=metric&appid=6ae6c79ccba3cdde251bf0965d4d137a`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${
+          cityCords[0].lat
+        }&lon=${cityCords[0].lon}&units=metric&appid=${
+          import.meta.env.VITE_WEATHER_API_KEY
+        }`
       );
       setOneDayData(oneDayWeather);
       setCity("");
@@ -34,9 +40,15 @@ export const Weather: FC = () => {
   };
 
   const findByLocation = async () => {
-    setLoading(true)
+    setLoading(true);
     const location = await getLocation();
-    const oneDayWeather: OneDayWeatherType = await apiLoader(`https://api.openweathermap.org/data/2.5/weather?lat=${location?.latitude}&lon=${location?.longitude}&units=metric&appid=6ae6c79ccba3cdde251bf0965d4d137a`);
+    const oneDayWeather: OneDayWeatherType = await apiLoader(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${
+        location?.latitude
+      }&lon=${location?.longitude}&units=metric&appid=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }`
+    );
     setOneDayData(oneDayWeather);
     setLoading(false);
   };
@@ -44,16 +56,21 @@ export const Weather: FC = () => {
   const clearInput = () => {
     setCity("");
   };
+
   return (
-      <div className={style.container}>
-        <FormWeather
-          handleSubmit={handleSubmit}
-          cityName={city}
-          clearInput={clearInput}
-          handleChange={handleChange}
-          findByLocation={findByLocation}
-        />
-        {!loading && oneDayData?.cod === 200 ?  <TodayWeather oneDayData={oneDayData} /> : loading ? <Loading /> : null}
-      </div>
+    <div className={style.container}>
+      <FormWeather
+        handleSubmit={handleSubmit}
+        cityName={city}
+        clearInput={clearInput}
+        handleChange={handleChange}
+        findByLocation={findByLocation}
+      />
+      {!loading && oneDayData?.cod === 200 ? (
+        <TodayWeather oneDayData={oneDayData} />
+      ) : loading ? (
+        <Loading />
+      ) : null}
+    </div>
   );
 };

@@ -29,7 +29,9 @@ export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
           />
         </div>
         <div className={style.midRight}>
-          <span className={style.temp}>{`${oneDayData.main.temp.toFixed(1)}\xB0`}</span>
+          <span className={style.temp}>{`${oneDayData.main.temp.toFixed(
+            1
+          )}\xB0`}</span>
           <span
             className={style.feelsLike}
           >{`Feels like ${oneDayData.main.feels_like.toFixed(1)}\xB0`}</span>

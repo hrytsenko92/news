@@ -6,7 +6,9 @@ export interface Position {
   timestamp: number;
 }
 
-export const getLocation = async (timeout = 5000): Promise<{ latitude: number; longitude: number } | null> => {
+export const getLocation = async (
+  timeout = 5000
+): Promise<{ latitude: number; longitude: number } | null> => {
   if ("geolocation" in navigator) {
     try {
       const position = await new Promise<Position>((resolve, reject) => {

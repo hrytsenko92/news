@@ -15,20 +15,28 @@ export const RecipeForm = ({
   clearInput,
   handleChange,
 }: FormProps) => {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+  };
   return (
-      <form className={style.formWrapper} onSubmit={handleSubmit}>
-          {recipeTitle.length > 0 ? <button className={style.clearInput} onClick={clearInput}>
-            <img className={style.closeSVG} src={closeSVG} />
-          </button> : null}
-          <input
-           className={style.formInput}
-          required
-          type="text"
-          placeholder="Enter recipe name"
-          value={recipeTitle}
-          onChange={handleChange}
-          />
-        <input className={style.formSubmit} value='Search...' type="submit" />
-      </form>
+    <form className={style.formWrapper} onSubmit={handleSubmit}>
+      {recipeTitle.length > 0 ? (
+        <button className={style.clearInput} onClick={clearInput}>
+          <img className={style.closeSVG} src={closeSVG} />
+        </button>
+      ) : null}
+      <input
+        className={style.formInput}
+        required
+        type="text"
+        placeholder="Enter recipe name"
+        value={recipeTitle}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+      />
+      <input className={style.formSubmit} value="Search..." type="submit" />
+    </form>
   );
 };
