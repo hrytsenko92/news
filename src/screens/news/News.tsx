@@ -14,7 +14,7 @@ export const newsDataLoader = async () => {
 };
 
 export const News: FC = () => {
-  const { data } = useLoaderData();
+  const { data } = useLoaderData() as { data: NewsType};
   return (
     <div className={style.newsContainer}>
       <div className={style.titleWrapper}>

@@ -3,7 +3,7 @@ import { apiLoader } from "../../../loaders/apiLoader";
 import { defer, useLoaderData } from "react-router-dom";
 import { Recipe } from "../../../types/recipeDataType";
 
-export const singleRecipeLoader = async ({ params }) => {
+export const singleRecipeLoader = async ({ params }: {params: any}) => {
   const data: Recipe = await apiLoader(
     `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=1e23ac7b985f4eef8bddaa18559163d9&number=20`
   );
@@ -11,8 +11,8 @@ export const singleRecipeLoader = async ({ params }) => {
 };
 
 export const RecipeCard = () => {
-  const { data }: { data: Recipe } = useLoaderData();
-
+  const { data } = useLoaderData() as { data: Recipe};
+console.log(data)
   return (
     <section className={style.container}>
       <div className={style.imgWrapper}>

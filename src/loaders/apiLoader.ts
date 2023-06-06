@@ -4,7 +4,7 @@ type RequestType = string;
 
 export const apiLoader = async (request: RequestType) => {
   try {
-    const { data, status } = await axios.get(request, {
+    const { data } = await axios.get(request, {
       headers: {
         Accept: "application/json",
       },

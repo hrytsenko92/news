@@ -1,25 +1,25 @@
 import { OneDayWeatherType } from "../../../types/oneDayWeatherType";
 import style from "./fiveDayWeather.module.scss";
-import * as dayjs from "dayjs";
-dayjs().format();
+import { format } from 'date-fns'
 
 type TodayWeatherProps = {
   oneDayData: OneDayWeatherType;
 };
 
 export const TodayWeather = ({ oneDayData }: TodayWeatherProps) => {
-  const now = dayjs();
-  const dayFormated = (i: dayjs.Dayjs) => {
-    return dayjs(i).format("dddd, D MMMM, YYYY");
+
+  const dayFormated = () => {
+    return format(new Date(), 'do LLLL yyyy')
   };
   const timeFormated = (i: Date) => {
-    return dayjs(i).format("HH:MM");
+     return format(new Date(i), 'HH:mm')
   };
+  console.log(dayFormated)
   return (
     <section className={style.container}>
       <div className={style.top}>
         <span className={style.name}>{oneDayData.name}</span>
-        <span className={style.date}>{dayFormated(now)}</span>
+        <span className={style.date}>{dayFormated()}</span>
       </div>
       <div className={style.mid}>
         <div className={style.midLeft}>

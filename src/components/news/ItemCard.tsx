@@ -1,9 +1,8 @@
 import { Article } from "../../types/newsType";
 import style from "./itemCard.module.scss";
-import * as dayjs from "dayjs";
 import notFound from "../../assets/not404.jpg";
 import rightSVG from "../../assets/right.svg";
-dayjs().format();
+import { format } from 'date-fns'
 
 type PropsData = {
   data: Article;
@@ -11,9 +10,8 @@ type PropsData = {
 
 export const ItemCard = ({ data }: PropsData) => {
   const daysFormated = (i: Date) => {
-    return dayjs(i).format("DD MMMM HH:MM");
+    return format(new Date(i), 'dd LLL HH:mm')
   };
-
   return (
     <div className={style.itemCardContainer}>
       <div className={style.contentWrapper}>

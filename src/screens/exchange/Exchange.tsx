@@ -18,19 +18,17 @@ export const Exchange: FC = () => {
         import.meta.env.VITE_EXCHANGE_API_KEY
       }/latest/${code}`
     );
-    setData(res);
+    res !== undefined ? setData(res): null    
   };
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputCurrency(Number(event.target.value));
   };
-  const onCurrencyInChange = async (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const onCurrencyInChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = Number(event.target.value);
-    const selectedCurrency: [string, number] = Object.entries(
-      data.conversion_rates
-    ).find(([key, value]) => value === selectedValue);
-    getNewData(selectedCurrency[0]);
+    if (data !== undefined) {
+      const selectedCurrency: [string, number] | undefined = Object.entries(data.conversion_rates).find(([_key, value]) => value === selectedValue);
+      selectedCurrency !== undefined ? getNewData(selectedCurrency[0]): null;
+    }
   };
   const onCurrencyOutChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOutCurrency(Number(event.target.value));

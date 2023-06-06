@@ -15,7 +15,7 @@ export const RecipeForm = ({
   clearInput,
   handleChange,
 }: FormProps) => {
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
       handleSubmit(event);
     }
