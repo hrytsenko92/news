@@ -42,14 +42,14 @@ To set up the project locally, follow these steps:
 
 ## Screenshots
 
-<img width="718" alt="Знімок екрана 2023-06-06 о 17 51 04" src="https://github.com/hrytsenko92/news/assets/98227096/55697d5d-3778-4120-860b-78505319f125">
+<img width="718" alt="q01" src="https://github.com/hrytsenko92/news/assets/98227096/8913d782-3901-4e2d-bdec-8a32116fd2a6">
 
-<img width="914" alt="Знімок екрана 2023-06-06 о 17 52 36" src="https://github.com/hrytsenko92/news/assets/98227096/6a05945e-de79-4824-888a-74fb42c78ce8">
+<img width="914" alt="q02" src="https://github.com/hrytsenko92/news/assets/98227096/41c92ab0-938f-4329-840d-c2bfa6eda1b9">
 
-<img width="914" alt="Знімок екрана 2023-06-06 о 17 53 32" src="https://github.com/hrytsenko92/news/assets/98227096/5b1be6a7-3a73-40d0-a847-536b7bbf125d">
+<img width="914" alt="q03" src="https://github.com/hrytsenko92/news/assets/98227096/6edf487c-a656-41c2-9242-b632841e4fa6">
 
-<img width="913" alt="Знімок екрана 2023-06-06 о 17 56 20" src="https://github.com/hrytsenko92/news/assets/98227096/5015fba5-ef6c-45b6-80d6-7f6a6b27f830">
+<img width="913" alt="q04" src="https://github.com/hrytsenko92/news/assets/98227096/887648a0-2e9e-4a28-825e-80a3d7e4d69b">
 
-<img width="484" alt="Знімок екрана 2023-06-06 о 17 57 27" src="https://github.com/hrytsenko92/news/assets/98227096/7e32ee36-7d57-40ef-834a-f7ccaf036fcc">
+<img width="484" alt="q06" src="https://github.com/hrytsenko92/news/assets/98227096/39ddfcd0-cc4c-4654-900b-2cd423f89383">
 
-<img width="444" alt="Знімок екрана 2023-06-06 о 17 56 45" src="https://github.com/hrytsenko92/news/assets/98227096/7bc81e90-c6c1-49d5-8330-4f3e36821ef4">
+<img width="444" alt="q05" src="https://github.com/hrytsenko92/news/assets/98227096/8be0ec01-beec-4e2a-b606-615d36d185fb">
